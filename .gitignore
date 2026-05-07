@@ -1,0 +1,9 @@
+# Node & React
+frontend/node_modules/
+frontend/dist/
+.env
+
+# Python & Backend
+backend/venv/
+backend/__pycache__/
+*.pyc
