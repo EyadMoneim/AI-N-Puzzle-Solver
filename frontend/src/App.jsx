@@ -219,8 +219,7 @@ function App() {
     setStats(null)
     
     try {
-const response = await axios.post('https://https://eyadmoneim-n-puzzle-api.hf.space/solve', {        initial_state: board,
-        size: boardSize,
+    const response = await axios.post('https://eyadmoneim-n-puzzle-api.hf.space/solve', {        size: boardSize,
         heuristic: heuristic
       })
 
