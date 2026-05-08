@@ -219,7 +219,10 @@ function App() {
     setStats(null)
     
     try {
-    const response = await axios.post('https://eyadmoneim-n-puzzle-api.hf.space/solve', {        size: boardSize,
+      // اللينك الصح اللي مفيش فيه أي غلطة
+      const response = await axios.post('https://eyadmoneim-n-puzzle-api.hf.space/solve', {
+        initial_state: board,
+        size: boardSize,
         heuristic: heuristic
       })
 
@@ -237,7 +240,8 @@ function App() {
 
       playSolution(response.data.path)
     } catch (err) {
-      setError('Error connecting to backend server.')
+      // التعديل السحري: هيطبعلك سبب الرفض الحقيقي على الشاشة
+      setError(`Crash Reason: ${err.message}`)
       setIsSolving(false)
     }
   }
